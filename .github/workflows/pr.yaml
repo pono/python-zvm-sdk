@@ -1,0 +1,17 @@
+name: remote ssh command
+on:
+    - pull_request
+jobs:
+
+  whoami:
+    name: whoami and kernel
+    runs-on: ubuntu-latest
+    steps:
+    - name: ssh to remote and check machine
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.host_s390x }}
+        username: ${{ secrets.username_s390x }}
+        key: ${{ secrets.key_s390x }}
+        passphrase: ${{ secrets.passphrase_s390x}}
+        script: whoami && uname -a
