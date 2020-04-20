@@ -1,6 +1,6 @@
 name: checks to run on push
 on:
-    - push
+    - pull_request
 jobs:
   python:
     steps:
