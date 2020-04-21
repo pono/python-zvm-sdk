@@ -2,7 +2,7 @@ name: checks to run on push
 on:
     - pull_request:
         branches:
-          - notthisone1
+          - notthisone2
 jobs:
   python:
     name: python checks
