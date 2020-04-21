@@ -20,5 +20,5 @@ jobs:
             uname -a
             git clone https://github.com/pono/python-zvm-sdk
             cd python-zvm-sdk
-            tox
+            ~/.local/bin/tox
             rm -rf ~/python-zvm-sdk
