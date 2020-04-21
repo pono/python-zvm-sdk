@@ -14,4 +14,11 @@ jobs:
         username: ${{ secrets.username_s390x }}
         key: ${{ secrets.key_s390x }}
         passphrase: ${{ secrets.passphrase_s390x}}
-        script: whoami && uname -a
+        port: ${{ secrets.port_s390x}}
+        script: |
+            whoami
+            uname -a
+            git clone https://github.com/pono/python-zvm-sdk
+            cd python-zvm-sdk
+            ~/.local/bin/tox
+            rm -rf ~/python-zvm-sdk
